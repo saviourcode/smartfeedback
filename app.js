@@ -21,9 +21,10 @@ app.use(session({
 }));
 
 var conn = mysql.createConnection({
-	host: "localhost",
-	user: "root",
-	database: "feedback1"
+	host: "us-cdbr-iron-east-01.cleardb.net",
+	user: "b43280fc5efd34",
+	database: "heroku_511483192373aa1",
+	password: "bfd35706"
 });
 conn.connect(function(error){
 	if(error){
