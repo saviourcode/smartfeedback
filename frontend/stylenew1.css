@@ -38,7 +38,6 @@ body{
 
 
 .wrapper .form .input_field{
-  position: relative;
   margin-bottom: 10px;
 }
 
@@ -49,6 +48,12 @@ body{
   border: none;
   background: #eeeeee;
   font-size: 20px;
+}
+
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .wrapper .form .btn{

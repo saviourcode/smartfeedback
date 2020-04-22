@@ -33,6 +33,7 @@ body{
   outline: none;
   cursor: pointer;
   transition: 0.5s;
+  font-size: 20px;
 }
 
 .logbtn:hover{
@@ -52,6 +53,19 @@ body{
   border:none;
   font-size:20px;
   box-shadow:0 5px 25px rgba(0,0,0,.5);
+}
+
+.txtb {
+  margin: 38px auto;
+}
+
+.txtb input {
+  padding:10px;
+  width:100%;
+  height:50px;
+  border:none;
+  font-size:20px;
+  box-shadow:0 5px 25px rgba(0,0,0,.5); 
 }
 
 @media only screen and (max-width: 1000px) {

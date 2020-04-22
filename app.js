@@ -262,40 +262,41 @@ app.get("/register", function(req, res){
 });
 
 app.post("/register", function(req, res) {
-	// var token = jwt.sign({
-	// 	user: req.body
-	// }, process.env.token_key);
-	// req.session.token = token;
 	var data = req.body;
-	//console.log('1', req.session);
+	console.log('data: ', data);
 	var sql = ``;
+	var dept = data['department'];
 	if(data.year == "FE"){
-		if(data.division == "none"){
-			sql = `SELECT id, name, branch, subject, division FROM ${data.department} WHERE branch='${data.branch}' AND division='no'`;
+		sendData = Object.assign(data, {department: 'humanities', branch: dept})
+		if(sendData.division == "none"){
+			sql = `SELECT id, name, branch, subject, division FROM ${sendData.department} WHERE branch='${data.branch}' AND division='no'`;
 		} else {
-			sql = `SELECT id, name, branch, subject, division FROM ${data.department} WHERE branch='${data.branch}' AND division='${data.division}'`;
+			sql = `SELECT id, name, branch, subject, division FROM ${sendData.department} WHERE branch='${data.branch}' AND division='${data.division}'`;
 		}
+		req.session.user = sendData;
 	} else {
 		sql = `SELECT id, name, year , subject, division FROM ${data.department} WHERE year='${data.year}' AND division='${data.division}'`;
+		req.session.user = data;
+
 	}
 	conn.query(sql, function(err, result){
 		if(err){
 			console.log(err);
 		}
 		console.log("sql: ", sql);
-		req.session.user = data;
 		req.session.data = result;
 		req.session.save(function(err){
 			if(err){
 				console.log(err);
 			} else {
-				//console.log('2', req.session)
+				console.log('req.session saved')
+				res.redirect('/department_questions');
 			}
 		});
 	});
 });
 
-app.get("/department_questions", function(req, res){
+app.get("/department_questions", isRegistered, function(req, res){
 	res.sendFile(__dirname + "/frontend/questions.html");
 });
 
@@ -455,11 +456,12 @@ function isLoggedIn (req, res, next){
 		});
 }
 
-async function isRegistered(req, res, next){
+function isRegistered(req, res, next){
 	if(req.session.user){
 		next();
 	} else {
 		console.log("not registered");
+		console.log('session: ', req.session);
 		res.redirect("/register");
 	}
 }
