@@ -20,12 +20,9 @@ app.use(session({
 	},
 }));
 
-var conn = mysql.createConnection({
-	host: "us-cdbr-iron-east-01.cleardb.net",
-	user: "b43280fc5efd34",
-	database: "heroku_511483192373aa1",
-	password: "bfd35706"
-});
+
+
+var conn = mysql.createConnection('mysql://b43280fc5efd34:bfd35706@us-cdbr-iron-east-01.cleardb.net/heroku_511483192373aa1?reconnect=true');
 conn.connect(function(error){
 	if(error){
 		console.log(error.message);
