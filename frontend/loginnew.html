@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="stylenew.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+      <form  method="POST" class="login-form">
+        <h1>LOGIN</h1>
+
+        <div class="box">
+          <select name="department" class="form-control" required>
+            <option>DEPARTMENT</option>
+            <option value="electronics">ELECTRONICS</option>
+            <option value="computer">COMPUTER</option>
+            <option value="it">IT</option>
+            <option value="chemical">CHEMICAL</option>
+            <option value="civil">CIVIL</option>
+            <option value="mechanical">MECHANICAL</option>
+            <option value="humanities">HUMANITIES</option>
+            <option value="DMCE">DMCE</option>
+          </select>
+        </div>
+
+        <div class="txtb">
+          <input type="password" name="password">
+          <span data-placeholder="Password"></span>
+        </div>
+
+        <input type="submit" class="logbtn" value="Login">
+
+        
+
+      </form>
+
+      <script type="text/javascript">
+      $(".txtb input").on("focus",function(){
+        $(this).addClass("focus");
+      });
+
+      $(".txtb input").on("blur",function(){
+        if($(this).val() == "")
+        $(this).removeClass("focus");
+      });
+
+      </script>
+      <script type="text/javascript" src="./loginnew.js"></script>
+
+  </body>
+</html>

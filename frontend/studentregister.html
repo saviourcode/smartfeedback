@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="stylenew.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+      <form action="/department_questions" method="GET" class="login-form">
+        <h1>DETAILS</h1>
+
+        <div class="box">
+          <label>DEPARTMENT</label>
+          <select name="department" class="form-control" required >
+            <option value="electronics">Electronics</option>
+            <option value="civil">Civil</option>
+            <option value="mechanical">Mechanical</option>
+            <option value="it">Information Technology</option>
+            <option value="computer">Computer</option>
+            <option value="chemical">Chemical</option>
+         </select>
+        </div>
+  
+        <div class="box">
+          <label>YEAR</label>
+          <select name="year" class="form-control" required >
+            <option value="FE">FE</option>
+            <option value="SE">SE</option>
+            <option value="TE">TE</option>
+            <option value="BE">BE</option>
+          </select>
+        </div>
+ 
+        <div class="box">
+          <label>DIVISION</label>
+          <select name="division" class="form-control" required >
+            <option value="none">none</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="S">S</option>
+          </select>
+          </div>
+        
+
+        <!-- <div class="box">
+          <select name="SHIFT" class="form-control" required >
+              <option>SHIFT</option>
+              <option value="FIRST">First</option>
+              <option value="SECOND">Second</option>
+              <option value="NONE">None</option>
+          </select>
+          </div>
+          <br>-->
+          
+        <div class="box">
+          <input type="submit" class="logbtn" value="SUBMIT">
+        </div>
+      </form>
+    <script type="text/javascript" src="./studentregister.js"></script>
+  </body>
+</html>
