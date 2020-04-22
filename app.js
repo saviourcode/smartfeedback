@@ -15,9 +15,6 @@ app.use(session({
 	secret: "the key to the universe",
 	resave: false,
 	saveUninitialized: false,
-	cookie: {
-		maxAge: 600000
-	},
 }));
 
 
@@ -282,7 +279,7 @@ app.post("/register", function(req, res) {
 			if(err){
 				console.log(err);
 			}
-			res.redirect("/department_questions");
+			//res.redirect("/department_questions");
 		});
 	});
 });
@@ -456,6 +453,6 @@ function isRegistered(req, res, next){
 	}
 }
 
-app.listen(process.env.PORT || 3000, function(){
-	console.log("server running...");
+app.listen(process.env.PORT || 3030, function(){
+	console.log("server running...", process.env.PORT, process.env.IP);
 });
