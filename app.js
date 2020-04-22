@@ -17,9 +17,14 @@ app.use(session({
 	saveUninitialized: false,
 }));
 
+//'mysql://b43280fc5efd34:bfd35706@us-cdbr-iron-east-01.cleardb.net/heroku_511483192373aa1?reconnect=true'
 
-
-var conn = mysql.createConnection('mysql://b43280fc5efd34:bfd35706@us-cdbr-iron-east-01.cleardb.net/heroku_511483192373aa1?reconnect=true');
+var conn = mysql.createConnection({
+	host: 'us-cdbr-iron-east-01.cleardb.net',
+	user: 'b43280fc5efd34',
+	password: 'bfd35706',
+	database: 'heroku_511483192373aa1'
+});
 conn.connect(function(error){
 	if(error){
 		console.log(error.message);
@@ -453,6 +458,6 @@ function isRegistered(req, res, next){
 	}
 }
 
-app.listen(process.env.PORT || 3030, function(){
+app.listen(process.env.PORT || 3030, process.env.IP, function(){
 	console.log("server running...", process.env.PORT, process.env.IP);
 });
