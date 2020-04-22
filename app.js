@@ -19,19 +19,20 @@ app.use(session({
 
 //'mysql://b43280fc5efd34:bfd35706@us-cdbr-iron-east-01.cleardb.net/heroku_511483192373aa1?reconnect=true'
 
-var conn = mysql.createConnection({
+var conn = mysql.createPool({
+	connectionLimit: 10,
 	host: 'us-cdbr-iron-east-01.cleardb.net',
 	user: 'b43280fc5efd34',
 	password: 'bfd35706',
 	database: 'heroku_511483192373aa1'
 });
-conn.connect(function(error){
-	if(error){
-		console.log(error.message);
-	} else {
-		console.log("database connected!");
-	}
-})
+// conn.connect(function(error){
+// 	if(error){
+// 		console.log(error.message);
+// 	} else {
+// 		console.log("database connected!");
+// 	}
+// })
 
 app.get("/", function(req, res){
 	res.sendFile('index.html');
@@ -84,7 +85,7 @@ app.post("/plogin", function(req, res){
 })
 
 app.get("/addteacher", isLoggedIn, function(req, res){
-	res.sendFile(__dirname + '/frontend/register.html')
+	res.sendFile(__dirname + '/frontend/register.html');
 });
 
 app.post("/getdepartment", function(req, res){
@@ -261,9 +262,12 @@ app.get("/register", function(req, res){
 });
 
 app.post("/register", function(req, res) {
+	// var token = jwt.sign({
+	// 	user: req.body
+	// }, process.env.token_key);
+	// req.session.token = token;
 	var data = req.body;
-	console.log(data);
-	req.session.user = data;
+	//console.log('1', req.session);
 	var sql = ``;
 	if(data.year == "FE"){
 		if(data.division == "none"){
@@ -279,12 +283,14 @@ app.post("/register", function(req, res) {
 			console.log(err);
 		}
 		console.log("sql: ", sql);
+		req.session.user = data;
 		req.session.data = result;
 		req.session.save(function(err){
 			if(err){
 				console.log(err);
+			} else {
+				//console.log('2', req.session)
 			}
-			//res.redirect("/department_questions");
 		});
 	});
 });
@@ -449,7 +455,7 @@ function isLoggedIn (req, res, next){
 		});
 }
 
-function isRegistered(req, res, next){
+async function isRegistered(req, res, next){
 	if(req.session.user){
 		next();
 	} else {
