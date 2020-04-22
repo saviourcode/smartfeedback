@@ -20,7 +20,7 @@ app.use(session({
 //'mysql://b43280fc5efd34:bfd35706@us-cdbr-iron-east-01.cleardb.net/heroku_511483192373aa1?reconnect=true'
 
 var conn = mysql.createPool({
-	connectionLimit: 10,
+	connectionLimit: 30,
 	host: 'us-cdbr-iron-east-01.cleardb.net',
 	user: 'b43280fc5efd34',
 	password: 'bfd35706',
