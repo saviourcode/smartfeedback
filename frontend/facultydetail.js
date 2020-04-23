@@ -14,7 +14,7 @@ $(document).ready(function(){
 							<td>${response[i].subject}</td>
 							<td>${response[i].year}</td>
 							<td>${response[i].division}</td>
-							<td><form action="/statistics"><button id='${response[i].id}' class='show'>get statistics</form></td>
+							<td><form action="/statistics" method="POST"><button id='${response[i].id}' name='tid' value='${response[i].id}' class='show'>get statistics</button></form></td>
 							<td><button id='${response[i].id}' class='remove'>X</button></td>
 						</tr>
 					`)
@@ -29,7 +29,7 @@ $(document).ready(function(){
 							<td>${response[i].subject}</td>
 							<td>${response[i].branch}</td>
 							<td>${response[i].division}</td>
-							<td><form action="/statistics"><button id='${response[i].id}' class='show'>get statistics</form></button></td>
+							<td><form action="/statistics" method="POST"><button id='${response[i].id}' name='tid' value='${response[i].id}' class='show'>get statistics</button></form></td>
 							<td><button id='${response[i].id}' class='remove'>X</button></td>
 						</tr>
 					`)
@@ -47,17 +47,18 @@ $(document).ready(function(){
 				})
 				$(this).parents("tr").remove();
 			})
-			$(".show").click(function(){
-				fetch("/statistics", {
-					method: "POST",
-					headers: {
-						'Content-Type': 'application/json'
-					},	
-					body: JSON.stringify({
-						id: $(this).attr("id")
-					})
-				})
-			})
+			// $(".show").click(function(e){
+
+			// 	fetch("/statistics", {
+			// 		method: "POST",
+			// 		headers: {
+			// 			'Content-Type': 'application/json'
+			// 		},	
+			// 		body: JSON.stringify({
+			// 			id: $(this).attr("id")
+			// 		})
+			// 	})
+			// })
 		})
 	$(".delete").click(function(){
 		fetch("/cleardb", {

@@ -196,10 +196,11 @@ app.post("/statistics", isLoggedIn, function(req, res){
 			department = decoded.department;
 		}
 	})
-	
+	console.log('req.body: ', req.body.tid);
 	req.session.department = department;
-	req.session.tid = req.body.id;
+	req.session.tid = req.body.tid;
 	req.session.save();
+	res.redirect('/statistics');
 })
 
 app.get("/lab_statistics", isLoggedIn,
@@ -248,7 +249,14 @@ app.post("/cleardb", function(req, res){
 })
 
 app.get("/DMCE", function(req, res){
-	res.send("<h1>DMCE page</h1>")
+	conn.query(`SELECT * from college_feedback WHERE name='everyone'`, function(err, result){
+		if(err){
+			res.send(err.message);
+			console.log(err);
+		} else {
+			res.json({feedback: result})
+		}
+	})
 })
 
 //------------------------------------------------------------
@@ -375,6 +383,41 @@ app.post("/department_questions", isRegistered, function(req, res){
 // 	// 	}
 // 	// })
 // });
+
+// app.get("/test", function(req, res){
+// 	for(var i = 4; i < 6; i++){
+// 		for(var j = 0; j < 4; j++){
+// 			var sql = `ALTER TABLE college_feedback ADD`;
+// 			switch(j){
+// 				case 0:
+// 					sql = sql.concat(` A${i+1} INT(3) NOT NULL`);
+// 					break;
+// 				case 1:
+// 					sql = sql.concat(` B${i+1} INT(3) NOT NULL`);
+// 					break;
+// 				case 2:
+// 					sql = sql.concat(` C${i+1} INT(3) NOT NULL`);
+// 					break;
+// 				case 3:
+// 					sql = sql.concat(` D${i+1} INT(3) NOT NULL`);
+// 					break;
+// 			}
+// 			console.log(sql);
+// 			conn.query(sql, function(err, result){
+// 				if(err){
+// 					console.log(err);
+// 					res.send(err);
+// 				} else {
+// 					console.log('altered table successfully');
+// 				}
+// 			})
+// 		}
+// 	}
+// })
+
+// app.get('/test', function(req, res){
+// 	conn.query(`ALTER TABLE it ADD C1 INT(3)`)
+// })
 
 app.get("/college_questions", isRegistered, function(req, res){
 	res.sendFile(__dirname + "/frontend/colquestions.html");
