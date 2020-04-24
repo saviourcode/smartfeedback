@@ -110,6 +110,7 @@ d3.select(".two")
 	})
 	.style("fill", "darkOrange")
 
+d3.select(".one")
 	.selectAll("text")
 	.data(['Q1','Q2','Q3','Q4','Q5'])
 	.enter()
