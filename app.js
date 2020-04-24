@@ -337,7 +337,7 @@ app.post("/department_questions", isRegistered, function(req, res){
 			sql = sql.substring(0, sql.length - 2);
 			if(teacher.info.division == "none"){
 				if(department == "humanities"){
-					sql = sql.concat(` WHERE name='${teacher.info.name}' AND branch='${teacher.info.branch}' AND division='no'`);
+					sql = sql.concat(` WHERE name='${teacher.info.name}' AND branch='${teacher.info.branch}' AND division='none'`);
 				} else {
 					sql = sql.concat(` WHERE name='${teacher.info.name}' AND year='${teacher.info.year}' AND division='${req.session.user.division}'`);
 				}
