@@ -5,6 +5,7 @@ var bodyParser = require("body-parser");
 var dotenv = require("dotenv");
 var jwt = require("jsonwebtoken");
 var session = require("express-session");
+var mongoStore = require('connect-mongo')(session);
 
 dotenv.config();
 
@@ -12,13 +13,17 @@ app.use(express.static(__dirname + '/frontend'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(session({
+	store: new mongoStore({
+		url: 'mongodb+srv://Dhruv:Godambe%4066@cluster0-uj6dx.mongodb.net/test?retryWrites=true&w=majority',
+		ttl: 60 * 60 * 2,
+	}),
 	secret: "the key to the universe",
 	resave: false,
 	saveUninitialized: false,
 }));
 
 //'mysql://b43280fc5efd34:bfd35706@us-cdbr-iron-east-01.cleardb.net/heroku_511483192373aa1?reconnect=true'
-
+//mongodb+srv://Dhruv:Godambe@66@cluster0-uj6dx.mongodb.net/test?retryWrites=true&w=majority
 var conn = mysql.createPool({
 	connectionLimit: 30,
 	host: 'us-cdbr-iron-east-01.cleardb.net',
