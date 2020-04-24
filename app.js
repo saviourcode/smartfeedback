@@ -250,6 +250,12 @@ app.post("/cleardb", function(req, res){
 
 app.get("/DMCE", function(req, res){
 	conn.query(`SELECT * from college_feedback WHERE name='everyone'`, function(err, result){
+		let obj = {};
+		for(var i = 0; i < 6; i++){
+			for(var j = 0; j < 4; j++){
+				sw
+			}
+		}
 		if(err){
 			res.send(err.message);
 			console.log(err);
@@ -500,13 +506,15 @@ function isLoggedIn (req, res, next){
 }
 
 function isRegistered(req, res, next){
-	if(req.session.user){
-		next();
-	} else {
-		console.log("not registered");
-		console.log('session: ', req.session);
-		res.redirect("/register");
-	}
+	setTimeout(() => {
+		if(req.session.user){
+			next();
+		} else {
+			console.log("not registered");
+			console.log('session: ', req.session);
+			res.redirect("/register");
+		}
+	}, 500)
 }
 
 app.listen(process.env.PORT || 3030, process.env.IP, function(){
