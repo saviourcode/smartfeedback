@@ -288,7 +288,7 @@ app.post("/register", function(req, res) {
 	if(data.year == "FE"){
 		sendData = Object.assign(data, {department: 'humanities', branch: dept})
 		if(sendData.division == "none"){
-			sql = `SELECT id, name, branch, subject, division FROM ${sendData.department} WHERE branch='${data.branch}' AND division='no'`;
+			sql = `SELECT id, name, branch, subject, division FROM ${sendData.department} WHERE branch='${data.branch}' AND division='none'`;
 		} else {
 			sql = `SELECT id, name, branch, subject, division FROM ${sendData.department} WHERE branch='${data.branch}' AND division='${data.division}'`;
 		}
