@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -17,7 +18,7 @@
 		
 	</head>
 	<body>
-		<form action="/college_questions" method="GET" class="login-form">
+		<form action="/department_questions" method="POST" class="login-form">
 			<div class="header">
 			<h1>Branch:                    Year:                Division:</h1><br>
 			<p>A-Excellent  B-Good   C-Satisfactory   D-Poor</p>
@@ -32,10 +33,10 @@
 						<label name="teacher1" class="teacher">teacher 1</label>
 					</td>
 					<td>
-						<input type="radio" name="q11" value="A1">A 
-						<input type="radio" name="q11" value="B1">B
-						<input type="radio" name="q11" value="C1">C
-						<input type="radio" name="q11" value="D1">D	
+						<input type="radio" name="q11" value="A1" required="required">A 
+						<input type="radio" name="q11" value="B1" required="required">B
+						<input type="radio" name="q11" value="C1" required="required">C
+						<input type="radio" name="q11" value="D1" required="required">D	
 					</td>
 				</tr>
 				<tr name="teacher2">
@@ -43,10 +44,10 @@
 						<label name="teacher2" class="teacher">teacher 2</label>
 					</td>
 					<td>
-						<input type="radio" name="q12" value="A1">A 
-						<input type="radio" name="q12" value="B1">B
-						<input type="radio" name="q12" value="C1">C
-						<input type="radio" name="q12" value="D1">D
+						<input type="radio" name="q12" value="A1" required="required">A 
+						<input type="radio" name="q12" value="B1" required="required">B
+						<input type="radio" name="q12" value="C1" required="required">C
+						<input type="radio" name="q12" value="D1" required="required">D
 					</td>
 				</tr>
 				<tr name="teacher3">
@@ -54,10 +55,10 @@
 						<label name="teacher3" class="teacher">teacher 3</label>
 					</td>
 					<td>
-						<input type="radio" name="q13" value="A1">A
-						<input type="radio" name="q13" value="B1">B
-						<input type="radio" name="q13" value="C1">C
-						<input type="radio" name="q13" value="D1">D
+						<input type="radio" name="q13" value="A1" required="required">A
+						<input type="radio" name="q13" value="B1" required="required">B
+						<input type="radio" name="q13" value="C1" required="required">C
+						<input type="radio" name="q13" value="D1" required="required">D
 					</td>
 				</tr>
 				<tr name="teacher4">
@@ -65,10 +66,10 @@
 						<label name="teacher4" class="teacher">teacher 4</label>
 					</td>
 					<td>
-						<input type="radio" name="q14" value="A1">A
-						<input type="radio" name="q14" value="B1">B
-						<input type="radio" name="q14" value="C1">C
-						<input type="radio" name="q14" value="D1">D			
+						<input type="radio" name="q14" value="A1" required="required">A
+						<input type="radio" name="q14" value="B1" required="required">B
+						<input type="radio" name="q14" value="C1" required="required">C
+						<input type="radio" name="q14" value="D1" required="required">D			
 					</td>
 				</tr>
 				<tr name="teacher5">
@@ -76,10 +77,10 @@
 						<label name="teacher5" class="teacher">teacher 5</label>
 					</td>
 					<td>
-						<input type="radio" name="q15" value="A1">A
-						<input type="radio" name="q15" value="B1">B
-						<input type="radio" name="q15" value="C1">C
-						<input type="radio" name="q15" value="D1">D			
+						<input type="radio" name="q15" value="A1" required="required">A
+						<input type="radio" name="q15" value="B1" required="required">B
+						<input type="radio" name="q15" value="C1" required="required">C
+						<input type="radio" name="q15" value="D1" required="required">D			
 					</td>
 				</tr>
 				<tr name="teacher6">
@@ -87,10 +88,10 @@
 						<label name="teacher6" class="teacher">teacher 6</label>
 					</td>
 					<td>
-						<input type="radio" name="q16" value="A1">A
-						<input type="radio" name="q16" value="B1">B
-						<input type="radio" name="q16" value="C1">C
-						<input type="radio" name="q16" value="D1">D			
+						<input type="radio" name="q16" value="A1" required="required">A
+						<input type="radio" name="q16" value="B1" required="required">B
+						<input type="radio" name="q16" value="C1" required="required">C
+						<input type="radio" name="q16" value="D1" required="required">D			
 					</td>
 				</tr>
 			</table>
@@ -108,10 +109,10 @@
 					</td>
 					<td>
 			
-							<input type="radio" name="q21" value="A2">A 
-							<input type="radio" name="q21" value="B2">B 
-							<input type="radio" name="q21" value="C2">C 
-							<input type="radio" name="q21" value="D2">D 
+							<input type="radio" name="q21" value="A2" required="required">A 
+							<input type="radio" name="q21" value="B2" required="required">B 
+							<input type="radio" name="q21" value="C2" required="required">C 
+							<input type="radio" name="q21" value="D2" required="required">D 
 						</td>
 					</tr>
 					
@@ -121,10 +122,10 @@
 						</td>
 		
 			<td>
-			<input type="radio" name="q22" value="A2">A 
-			<input type="radio" name="q22" value="B2">B 
-			<input type="radio" name="q22" value="C2">C 
-			<input type="radio" name="q22" value="D2">D 
+			<input type="radio" name="q22" value="A2" required="required">A 
+			<input type="radio" name="q22" value="B2" required="required">B 
+			<input type="radio" name="q22" value="C2" required="required">C 
+			<input type="radio" name="q22" value="D2" required="required">D 
 		</td>
 	</tr>
 		
@@ -133,10 +134,10 @@
 			<label name="teacher3" class="teacher">teacher 3</label>
 		</td>
 		<td>
-			<input type="radio" name="q23" value="A2">A 
-			<input type="radio" name="q23" value="B2">B 
-			<input type="radio" name="q23" value="C2">C 
-			<input type="radio" name="q23" value="D2">D 
+			<input type="radio" name="q23" value="A2" required="required">A 
+			<input type="radio" name="q23" value="B2" required="required">B 
+			<input type="radio" name="q23" value="C2" required="required">C 
+			<input type="radio" name="q23" value="D2" required="required">D 
 		</td>
 	</tr>
 		
@@ -145,10 +146,10 @@
 			<label name="teacher4" class="teacher">teacher 4</label>
 		</td>
 		<td>
-			<input type="radio" name="q24" value="A2">A 
-			<input type="radio" name="q24" value="B2">B 
-			<input type="radio" name="q24" value="C2">C 
-			<input type="radio" name="q24" value="D2">D 
+			<input type="radio" name="q24" value="A2" required="required">A 
+			<input type="radio" name="q24" value="B2" required="required">B 
+			<input type="radio" name="q24" value="C2" required="required">C 
+			<input type="radio" name="q24" value="D2" required="required">D 
 		</td>
 	</tr>
 		
@@ -157,10 +158,10 @@
 			<label name="teacher5" class="teacher">teacher 5</label>
 		</td>
 			<td>
-			<input type="radio" name="q25" value="A2">A 
-			<input type="radio" name="q25" value="B2">B 
-			<input type="radio" name="q25" value="C2">C 
-			<input type="radio" name="q25" value="D2">D 
+			<input type="radio" name="q25" value="A2" required="required">A 
+			<input type="radio" name="q25" value="B2" required="required">B 
+			<input type="radio" name="q25" value="C2" required="required">C 
+			<input type="radio" name="q25" value="D2" required="required">D 
 		</td>
 		</tr>
 		
@@ -169,10 +170,10 @@
 			<label name="teacher6" class="teacher">teacher 6</label>
 		</td>
 		<td>
-			<input type="radio" name="q26" value="A2">A 
-			<input type="radio" name="q26" value="B2">B 
-			<input type="radio" name="q26" value="C2">C 
-			<input type="radio" name="q26" value="D2">D 
+			<input type="radio" name="q26" value="A2" required="required">A 
+			<input type="radio" name="q26" value="B2" required="required">B 
+			<input type="radio" name="q26" value="C2" required="required">C 
+			<input type="radio" name="q26" value="D2" required="required">D 
 			</td>
 		</tr>
 	</table>
@@ -188,10 +189,10 @@
 			<label name="teacher1" class="teacher">teacher 1</label>
 		</td>
 		<td>
-			<input type="radio" name="q31" value="A3">A 
-			<input type="radio" name="q31" value="B3">B 
-			<input type="radio" name="q31" value="C3">C 
-			<input type="radio" name="q31" value="D3">D
+			<input type="radio" name="q31" value="A3" required="required">A 
+			<input type="radio" name="q31" value="B3" required="required">B 
+			<input type="radio" name="q31" value="C3" required="required">C 
+			<input type="radio" name="q31" value="D3" required="required">D
 			</td>
 			</tr> 
 		<tr name="teacher2">
@@ -199,10 +200,10 @@
 			<label name="teacher2" class="teacher">teacher 2</label>
 		</td>
 		<td>
-			<input type="radio" name="q32" value="A3">A 
-			<input type="radio" name="q32" value="B3">B 
-			<input type="radio" name="q32" value="C3">C 
-			<input type="radio" name="q32" value="D3">D 
+			<input type="radio" name="q32" value="A3" required="required">A 
+			<input type="radio" name="q32" value="B3" required="required">B 
+			<input type="radio" name="q32" value="C3" required="required">C 
+			<input type="radio" name="q32" value="D3" required="required">D 
 		</td>
 	</tr>
 		<tr name="teacher3">
@@ -211,10 +212,10 @@
 			<label name="teacher3" class="teacher">teacher 3</label>
 		</td>
 		<td>
-			<input type="radio" name="q33" value="A3">A 
-			<input type="radio" name="q33" value="B3">B 
-			<input type="radio" name="q33" value="C3">C 
-			<input type="radio" name="q33" value="D3">D 
+			<input type="radio" name="q33" value="A3" required="required">A 
+			<input type="radio" name="q33" value="B3" required="required">B 
+			<input type="radio" name="q33" value="C3" required="required">C 
+			<input type="radio" name="q33" value="D3" required="required">D 
 		</td>
 	</tr>
 	<tr name="teacher4">
@@ -222,10 +223,10 @@
 			<label name="teacher4" class="teacher">teacher 4</label>
 			</td>
 			<td>
-			<input type="radio" name="q34" value="A3">A 
-			<input type="radio" name="q34" value="B3">B 
-			<input type="radio" name="q34" value="C3">C 
-			<input type="radio" name="q34" value="D3">D 
+			<input type="radio" name="q34" value="A3" required="required">A 
+			<input type="radio" name="q34" value="B3" required="required">B 
+			<input type="radio" name="q34" value="C3" required="required">C 
+			<input type="radio" name="q34" value="D3" required="required">D 
 		</td>
 	</tr>
 		<tr name="teacher5">
@@ -233,10 +234,10 @@
 			<label name="teacher5" class="teacher">teacher 5</label>
 		</td>
 		<td>
-			<input type="radio" name="q35" value="A3">A 
-			<input type="radio" name="q35" value="B3">B 
-			<input type="radio" name="q35" value="C3">C 
-			<input type="radio" name="q35" value="D3">D 
+			<input type="radio" name="q35" value="A3" required="required">A 
+			<input type="radio" name="q35" value="B3" required="required">B 
+			<input type="radio" name="q35" value="C3" required="required">C 
+			<input type="radio" name="q35" value="D3" required="required">D 
 		</td>
 		</tr>
 		<tr name="teacher6">
@@ -244,10 +245,10 @@
 			<label name="teacher6" class="teacher">teacher 6</label>
 		</td>
 		<td>
-			<input type="radio" name="q36" value="A3">A 
-			<input type="radio" name="q36" value="B3">B 
-			<input type="radio" name="q36" value="C3">C 
-			<input type="radio" name="q36" value="D3">D </td>
+			<input type="radio" name="q36" value="A3" required="required">A 
+			<input type="radio" name="q36" value="B3" required="required">B 
+			<input type="radio" name="q36" value="C3" required="required">C 
+			<input type="radio" name="q36" value="D3" required="required">D </td>
 		</tr>
 	</table>
 </h5>
@@ -261,55 +262,55 @@
 				<tr name="teacher1">
 					<td>
 			<label name="teacher1" class="teacher">teacher 1</label></td>
-			<td><input type="radio" name="q41" value="A4">A 
-			<input type="radio" name="q41" value="B4">B 
-			<input type="radio" name="q41" value="C4">C 
-			<input type="radio" name="q41" value="D4">D </td>
+			<td><input type="radio" name="q41" value="A4" required="required">A 
+			<input type="radio" name="q41" value="B4" required="required">B 
+			<input type="radio" name="q41" value="C4" required="required">C 
+			<input type="radio" name="q41" value="D4" required="required">D </td>
 		</tr>
 		<tr name="teacher2">
 			<td>
 			<label name="teacher2" class="teacher">teacher 2</label></td>
 			<td>
-			<input type="radio" name="q42" value="A4">A 
-			<input type="radio" name="q42" value="B4">B 
-			<input type="radio" name="q42" value="C4">C 
-			<input type="radio" name="q42" value="D4">D </td>
+			<input type="radio" name="q42" value="A4" required="required">A 
+			<input type="radio" name="q42" value="B4" required="required">B 
+			<input type="radio" name="q42" value="C4" required="required">C 
+			<input type="radio" name="q42" value="D4" required="required">D </td>
 		</tr>
 		<tr name="teacher3">
 		<td>
 			<label name="teacher3" class="teacher">teacher 3</label></td>
 			<td>
-			<input type="radio" name="q43" value="A4">A 
-			<input type="radio" name="q43" value="B4">B 
-			<input type="radio" name="q43" value="C4">C 
-			<input type="radio" name="q43" value="D4">D </td>
+			<input type="radio" name="q43" value="A4" required="required">A 
+			<input type="radio" name="q43" value="B4" required="required">B 
+			<input type="radio" name="q43" value="C4" required="required">C 
+			<input type="radio" name="q43" value="D4" required="required">D </td>
 		</tr>
 		<tr name="teacher4"> 
 		<td>
 			<label name="teacher4" class="teacher">teacher 4</label></td>
 			<td>
-			<input type="radio" name="q44" value="A4">A 
-			<input type="radio" name="q44" value="B4">B 
-			<input type="radio" name="q44" value="C4">C 
-			<input type="radio" name="q44" value="D4">D </td>
+			<input type="radio" name="q44" value="A4" required="required">A 
+			<input type="radio" name="q44" value="B4" required="required">B 
+			<input type="radio" name="q44" value="C4" required="required">C 
+			<input type="radio" name="q44" value="D4" required="required">D </td>
 		</tr>
 		<tr name="teacher5">
 		<td>
 			<label name="teacher5" class="teacher">teacher 5</label></td>
 			<td>
-			<input type="radio" name="q45" value="A4">A 
-			<input type="radio" name="q45" value="B4">B 
-			<input type="radio" name="q45" value="C4">C 
-			<input type="radio" name="q45" value="D4">D </td>
+			<input type="radio" name="q45" value="A4" required="required">A 
+			<input type="radio" name="q45" value="B4" required="required">B 
+			<input type="radio" name="q45" value="C4" required="required">C 
+			<input type="radio" name="q45" value="D4" required="required">D </td>
 		</tr>
 		<tr name="teacher6">
 		<td>
 			<label name="teacher6" class="teacher">teacher 6</label></td>
 			<td>
-			<input type="radio" name="q46" value="A4">A 
-			<input type="radio" name="q46" value="B4">B 
-			<input type="radio" name="q46" value="C4">C 
-			<input type="radio" name="q46" value="D4">D </td>
+			<input type="radio" name="q46" value="A4" required="required">A 
+			<input type="radio" name="q46" value="B4" required="required">B 
+			<input type="radio" name="q46" value="C4" required="required">C 
+			<input type="radio" name="q46" value="D4" required="required">D </td>
 		</tr>
 	</table>
 </h5>
@@ -325,55 +326,55 @@
 					<td>
 			<label name="teacher1" class="teacher">teacher 1</label></td>
 			<td>
-			<input type="radio" name="q51" value="A5">A 
-			<input type="radio" name="q51" value="B5">B 
-			<input type="radio" name="q51" value="C5">C 
-			<input type="radio" name="q51" value="D5">D </td>
+			<input type="radio" name="q51" value="A5" required="required">A 
+			<input type="radio" name="q51" value="B5" required="required">B 
+			<input type="radio" name="q51" value="C5" required="required">C 
+			<input type="radio" name="q51" value="D5" required="required">D </td>
 		</tr>
 		<tr name="teacher2">
 		<td>
 			<label name="teacher2" class="teacher">teacher 2</label></td>
 			<td>
-			<input type="radio" name="q52" value="A5">A 
-			<input type="radio" name="q52" value="B5">B 
-			<input type="radio" name="q52" value="C5">C 
-			<input type="radio" name="q52" value="D5">D </td>
+			<input type="radio" name="q52" value="A5" required="required">A 
+			<input type="radio" name="q52" value="B5" required="required">B 
+			<input type="radio" name="q52" value="C5" required="required">C 
+			<input type="radio" name="q52" value="D5" required="required">D </td>
 		</tr>
 		<tr name="teacher3">
 			<td>
 			<label name="teacher3" class="teacher">teacher 3</label></td>
 			<td>
-			<input type="radio" name="q53" value="A5">A 
-			<input type="radio" name="q53" value="B5">B 
-			<input type="radio" name="q53" value="C5">C 
-			<input type="radio" name="q53" value="D5">D </td>
+			<input type="radio" name="q53" value="A5" required="required">A 
+			<input type="radio" name="q53" value="B5" required="required">B 
+			<input type="radio" name="q53" value="C5" required="required">C 
+			<input type="radio" name="q53" value="D5" required="required">D </td>
 		</tr>
 		<tr name="teacher4">
 			<td>
 			<label name="teacher4" class="teacher">teacher 4</label></td>
 			<td>
-			<input type="radio" name="q54" value="A5">A 
-			<input type="radio" name="q54" value="B5">B 
-			<input type="radio" name="q54" value="C5">C 
-			<input type="radio" name="q54" value="D5">D </td>
+			<input type="radio" name="q54" value="A5" required="required">A 
+			<input type="radio" name="q54" value="B5" required="required">B 
+			<input type="radio" name="q54" value="C5" required="required">C 
+			<input type="radio" name="q54" value="D5" required="required">D </td>
 		</tr>
 		<tr name="teacher5">
 		<td>
 			<label name="teacher5" class="teacher">teacher 5</label></td>
 			<td>
-			<input type="radio" name="q55" value="A5">A 
-			<input type="radio" name="q55" value="B5">B 
-			<input type="radio" name="q55" value="C5">C 
-			<input type="radio" name="q55" value="D5">D </td>
+			<input type="radio" name="q55" value="A5" required="required">A 
+			<input type="radio" name="q55" value="B5" required="required">B 
+			<input type="radio" name="q55" value="C5" required="required">C 
+			<input type="radio" name="q55" value="D5" required="required">D </td>
 		</tr>
 		<tr name="teacher6">
 			<td>
 			<label name="teacher6" class="teacher">teacher 6</label></td>
 			<td>
-			<input type="radio" name="q56" value="A5">A 
-			<input type="radio" name="q56" value="B5">B 
-			<input type="radio" name="q56" value="C5">C 
-			<input type="radio" name="q56" value="D5">D </td>
+			<input type="radio" name="q56" value="A5" required="required">A 
+			<input type="radio" name="q56" value="B5" required="required">B 
+			<input type="radio" name="q56" value="C5" required="required">C 
+			<input type="radio" name="q56" value="D5" required="required">D </td>
 		</tr>
 	</table>
 </h5>
@@ -388,55 +389,55 @@
 					<td>
 			<label name="teacher1" class="teacher">teacher 1</label></td>
 			<td>
-			<input type="radio" name="q61" value="A6">A 
-			<input type="radio" name="q61" value="B6">B 
-			<input type="radio" name="q61" value="C6">C 
-			<input type="radio" name="q61" value="D6">D </td>
+			<input type="radio" name="q61" value="A6" required="required">A 
+			<input type="radio" name="q61" value="B6" required="required">B 
+			<input type="radio" name="q61" value="C6" required="required">C 
+			<input type="radio" name="q61" value="D6" required="required">D </td>
 		</tr>
 		<tr name="teacher2">
 			<td>
 			<label name="teacher2" class="teacher">teacher 2</label></td>
 			<td>
-			<input type="radio" name="q62" value="A6">A 
-			<input type="radio" name="q62" value="B6">B 
-			<input type="radio" name="q62" value="C6">C 
-			<input type="radio" name="q62" value="D6">D </td>
+			<input type="radio" name="q62" value="A6" required="required">A 
+			<input type="radio" name="q62" value="B6" required="required">B 
+			<input type="radio" name="q62" value="C6" required="required">C 
+			<input type="radio" name="q62" value="D6" required="required">D </td>
 		</tr>
 		<tr name="teacher3">
 			<td>
 			<label name="teacher3" class="teacher">teacher 3</label></td>
 			<td>
-			<input type="radio" name="q63" value="A6">A 
-			<input type="radio" name="q63" value="B6">B 
-			<input type="radio" name="q63" value="C6">C 
-			<input type="radio" name="q63" value="D6">D </td>
+			<input type="radio" name="q63" value="A6" required="required">A 
+			<input type="radio" name="q63" value="B6" required="required">B 
+			<input type="radio" name="q63" value="C6" required="required">C 
+			<input type="radio" name="q63" value="D6" required="required">D </td>
 		</tr>
 		<tr name="teacher4">
 			<td>
 			<label name="teacher4" class="teacher">teacher 4</label></td>
 			<td>
-			<input type="radio" name="q64" value="A6">A 
-			<input type="radio" name="q64" value="B6">B 
-			<input type="radio" name="q64" value="C6">C 
-			<input type="radio" name="q64" value="D6">D </td>
+			<input type="radio" name="q64" value="A6" required="required">A 
+			<input type="radio" name="q64" value="B6" required="required">B 
+			<input type="radio" name="q64" value="C6" required="required">C 
+			<input type="radio" name="q64" value="D6" required="required">D </td>
 		</tr>
 		<tr name="teacher5">
 			<td>
 			<label name="teacher5" class="teacher">teacher 5</label></td>
 			<td>
-			<input type="radio" name="q65" value="A6">A 
-			<input type="radio" name="q65" value="B6">B 
-			<input type="radio" name="q65" value="C6">C 
-			<input type="radio" name="q65" value="D6">D </td>
+			<input type="radio" name="q65" value="A6" required="required">A 
+			<input type="radio" name="q65" value="B6" required="required">B 
+			<input type="radio" name="q65" value="C6" required="required">C 
+			<input type="radio" name="q65" value="D6" required="required">D </td>
 		</tr>
 		<tr name="teacher6">
 		<td>
 			<label name="teacher6" class="teacher">teacher 6</label></td>
 			<td>
-			<input type="radio" name="q66" value="A6">A 
-			<input type="radio" name="q66" value="B6">B 
-			<input type="radio" name="q66" value="C6">C 
-			<input type="radio" name="q66" value="D6">D </td>
+			<input type="radio" name="q66" value="A6" required="required">A 
+			<input type="radio" name="q66" value="B6" required="required">B 
+			<input type="radio" name="q66" value="C6" required="required">C 
+			<input type="radio" name="q66" value="D6" required="required">D </td>
 		</tr>
 	</table>
 </h5>
@@ -451,55 +452,55 @@
 					<td>
 			<label name="teacher1" class="teacher">teacher 1</label></td>
 			<td>
-			<input type="radio" name="q71" value="A7">A 
-			<input type="radio" name="q71" value="B7">B 
-			<input type="radio" name="q71" value="C7">C 
-			<input type="radio" name="q71" value="D7">D </td>
+			<input type="radio" name="q71" value="A7" required="required">A 
+			<input type="radio" name="q71" value="B7" required="required">B 
+			<input type="radio" name="q71" value="C7" required="required">C 
+			<input type="radio" name="q71" value="D7" required="required">D </td>
 		</tr>
 		<tr name="teacher2">
 		<td>
 			<label name="teacher2" class="teacher">teacher 2</label></td>
 			<td>
-			<input type="radio" name="q72" value="A7">A 
-			<input type="radio" name="q72" value="B7">B 
-			<input type="radio" name="q72" value="C7">C 
-			<input type="radio" name="q72" value="D7">D </td>
+			<input type="radio" name="q72" value="A7" required="required">A 
+			<input type="radio" name="q72" value="B7" required="required">B 
+			<input type="radio" name="q72" value="C7" required="required">C 
+			<input type="radio" name="q72" value="D7" required="required">D </td>
 		</tr>
 		<tr name="teacher3">
 			<td>
 			<label name="teacher3" class="teacher">teacher 3</label></td>
 			<td>
-			<input type="radio" name="q73" value="A7">A 
-			<input type="radio" name="q73" value="B7">B 
-			<input type="radio" name="q73" value="C7">C 
-			<input type="radio" name="q73" value="D7">D </td>
+			<input type="radio" name="q73" value="A7" required="required">A 
+			<input type="radio" name="q73" value="B7" required="required">B 
+			<input type="radio" name="q73" value="C7" required="required">C 
+			<input type="radio" name="q73" value="D7" required="required">D </td>
 		</tr>
 		<tr name="teacher4">
 			<td>
 			<label name="teacher4" class="teacher">teacher 4</label></td>
 			<td>
-			<input type="radio" name="q74" value="A7">A 
-			<input type="radio" name="q74" value="B7">B 
-			<input type="radio" name="q74" value="C7">C 
-			<input type="radio" name="q74" value="D7">D </td>
+			<input type="radio" name="q74" value="A7" required="required">A 
+			<input type="radio" name="q74" value="B7" required="required">B 
+			<input type="radio" name="q74" value="C7" required="required">C 
+			<input type="radio" name="q74" value="D7" required="required">D </td>
 		</tr>
 		<tr name="teacher5">
 			<td>
 			<label name="teacher5" class="teacher">teacher 5</label></td>
 			<td>
-			<input type="radio" name="q75" value="A7">A 
-			<input type="radio" name="q75" value="B7">B 
-			<input type="radio" name="q75" value="C7">C 
-			<input type="radio" name="q75" value="D7">D </td>
+			<input type="radio" name="q75" value="A7" required="required">A 
+			<input type="radio" name="q75" value="B7" required="required">B 
+			<input type="radio" name="q75" value="C7" required="required">C 
+			<input type="radio" name="q75" value="D7" required="required">D </td>
 		</tr>
 		<tr name="teacher6">
 			<td>
 			<label name="teacher6" class="teacher">teacher 6</label></td>
 			<td>
-			<input type="radio" name="q76" value="A7">A 
-			<input type="radio" name="q76" value="B7">B 
-			<input type="radio" name="q76" value="C7">C 
-			<input type="radio" name="q76" value="D7">D </td>
+			<input type="radio" name="q76" value="A7" required="required">A 
+			<input type="radio" name="q76" value="B7" required="required">B 
+			<input type="radio" name="q76" value="C7" required="required">C 
+			<input type="radio" name="q76" value="D7" required="required">D </td>
 		</tr>
 	</table>
 </h5>
@@ -514,55 +515,55 @@
 					<td>
 			<label name="teacher1" class="teacher">teacher 1</label></td>
 			<td>
-			<input type="radio" name="q81" value="A8">A 
-			<input type="radio" name="q81" value="B8">B 
-			<input type="radio" name="q81" value="C8">C 
-			<input type="radio" name="q81" value="D8">D </td>
+			<input type="radio" name="q81" value="A8" required="required">A 
+			<input type="radio" name="q81" value="B8" required="required">B 
+			<input type="radio" name="q81" value="C8" required="required">C 
+			<input type="radio" name="q81" value="D8" required="required">D </td>
 		</tr>
 		<tr name="teacher2">
 			<td>
 			<label name="teacher2" class="teacher">teacher 2</label></td>
 			<td>
-			<input type="radio" name="q82" value="A8">A 
-			<input type="radio" name="q82" value="B8">B 
-			<input type="radio" name="q82" value="C8">C 
-			<input type="radio" name="q82" value="D8">D </td>
+			<input type="radio" name="q82" value="A8" required="required">A 
+			<input type="radio" name="q82" value="B8" required="required">B 
+			<input type="radio" name="q82" value="C8" required="required">C 
+			<input type="radio" name="q82" value="D8" required="required">D </td>
 		</tr>
 		<tr name="teacher3">
 			<td>
 			<label name="teacher3" class="teacher">teacher 3</label></td>
 			<td>
-			<input type="radio" name="q83" value="A8">A 
-			<input type="radio" name="q83" value="B8">B 
-			<input type="radio" name="q83" value="C8">C 
-			<input type="radio" name="q83" value="D8">D </td>
+			<input type="radio" name="q83" value="A8" required="required">A 
+			<input type="radio" name="q83" value="B8" required="required">B 
+			<input type="radio" name="q83" value="C8" required="required">C 
+			<input type="radio" name="q83" value="D8" required="required">D </td>
 		</tr>
 		<tr name="teacher4">
 			<td>
 			<label name="teacher4" class="teacher">teacher 4</label></td>
 			<td>
-			<input type="radio" name="q84" value="A8">A 
-			<input type="radio" name="q84" value="B8">B 
-			<input type="radio" name="q84" value="C8">C 
-			<input type="radio" name="q84" value="D8">D </td>
+			<input type="radio" name="q84" value="A8" required="required">A 
+			<input type="radio" name="q84" value="B8" required="required">B 
+			<input type="radio" name="q84" value="C8" required="required">C 
+			<input type="radio" name="q84" value="D8" required="required">D </td>
 		</tr>
 		<tr name="teacher5">
 			<td>
 			<label name="teacher5" class="teacher">teacher 5</label></td>
 			<td>
-			<input type="radio" name="q85" value="A8">A 
-			<input type="radio" name="q85" value="B8">B 
-			<input type="radio" name="q85" value="C8">C 
-			<input type="radio" name="q85" value="D8">D </td>
+			<input type="radio" name="q85" value="A8" required="required">A 
+			<input type="radio" name="q85" value="B8" required="required">B 
+			<input type="radio" name="q85" value="C8" required="required">C 
+			<input type="radio" name="q85" value="D8" required="required">D </td>
 		</tr>
 		<tr name="teacher6">
 			<td>
 			<label name="teacher6" class="teacher">teacher 6</label></td>
 			<td>
-			<input type="radio" name="q86" value="A8">A 
-			<input type="radio" name="q86" value="B8">B 
-			<input type="radio" name="q86" value="C8">C 
-			<input type="radio" name="q86" value="D8">D </td>
+			<input type="radio" name="q86" value="A8" required="required">A 
+			<input type="radio" name="q86" value="B8" required="required">B 
+			<input type="radio" name="q86" value="C8" required="required">C 
+			<input type="radio" name="q86" value="D8" required="required">D </td>
 		</tr>
 	</table>
 </h5>
@@ -577,55 +578,55 @@
 					<td>
 			<label name="teacher1" class="teacher">teacher 1</label></td>
 			<td>
-			<input type="radio" name="q91" value="A9">A 
-			<input type="radio" name="q91" value="B9">B 
-			<input type="radio" name="q91" value="C9">C 
-			<input type="radio" name="q91" value="D9">D </td>
+			<input type="radio" name="q91" value="A9" required="required">A 
+			<input type="radio" name="q91" value="B9" required="required">B 
+			<input type="radio" name="q91" value="C9" required="required">C 
+			<input type="radio" name="q91" value="D9" required="required">D </td>
 		</tr>
 		<tr name="teacher2">
 			<td>
 			<label name="teacher2" class="teacher">teacher 2</label></td>
 			<td>
-			<input type="radio" name="q92" value="A9">A 
-			<input type="radio" name="q92" value="B9">B 
-			<input type="radio" name="q92" value="C9">C 
-			<input type="radio" name="q92" value="D9">D </td>
+			<input type="radio" name="q92" value="A9" required="required">A 
+			<input type="radio" name="q92" value="B9" required="required">B 
+			<input type="radio" name="q92" value="C9" required="required">C 
+			<input type="radio" name="q92" value="D9" required="required">D </td>
 		</tr>
 		<tr name="teacher3">
 			<td>
 			<label name="teacher3" class="teacher">teacher 3</label></td>
 			<td>
-			<input type="radio" name="q93" value="A9">A 
-			<input type="radio" name="q93" value="B9">B 
-			<input type="radio" name="q93" value="C9">C 
-			<input type="radio" name="q93" value="D9">D </td>
+			<input type="radio" name="q93" value="A9" required="required">A 
+			<input type="radio" name="q93" value="B9" required="required">B 
+			<input type="radio" name="q93" value="C9" required="required">C 
+			<input type="radio" name="q93" value="D9" required="required">D </td>
 		</tr>
 		<tr name="teacher4">
 			<td>
 			<label name="teacher4" class="teacher">teacher 4</label></td>
 			<td>
-			<input type="radio" name="q94" value="A9">A 
-			<input type="radio" name="q94" value="B9">B 
-			<input type="radio" name="q94" value="C9">C 
-			<input type="radio" name="q94" value="D9">D </td>
+			<input type="radio" name="q94" value="A9" required="required">A 
+			<input type="radio" name="q94" value="B9" required="required">B 
+			<input type="radio" name="q94" value="C9" required="required">C 
+			<input type="radio" name="q94" value="D9" required="required">D </td>
 		</tr>
 		<tr name="teacher5">
 			<td>
 			<label name="teacher5" class="teacher">teacher 5</label></td>
 			<td>
-			<input type="radio" name="q95" value="A9">A 
-			<input type="radio" name="q95" value="B9">B 
-			<input type="radio" name="q95" value="C9">C 
-			<input type="radio" name="q95" value="D9">D </td>
+			<input type="radio" name="q95" value="A9" required="required">A 
+			<input type="radio" name="q95" value="B9" required="required">B 
+			<input type="radio" name="q95" value="C9" required="required">C 
+			<input type="radio" name="q95" value="D9" required="required">D </td>
 		</tr>
 		<tr name="teacher6">
 			<td>
 			<label name="teacher6" class="teacher">teacher 6</label></td>
 			<td>
-			<input type="radio" name="q96" value="A9">A 
-			<input type="radio" name="q96" value="B9">B 
-			<input type="radio" name="q96" value="C9">C 
-			<input type="radio" name="q96" value="D9">D </td>
+			<input type="radio" name="q96" value="A9" required="required">A 
+			<input type="radio" name="q96" value="B9" required="required">B 
+			<input type="radio" name="q96" value="C9" required="required">C 
+			<input type="radio" name="q96" value="D9" required="required">D </td>
 		</tr>
 	</table>
 </h5>
@@ -640,55 +641,55 @@
 					<td>
 			<label name="teacher1" class="teacher">teacher 1</label></td>
 			<td>
-			<input type="radio" name="q101" value="A10">A 
-			<input type="radio" name="q101" value="B10">B 
-			<input type="radio" name="q101" value="C10">C 
-			<input type="radio" name="q101" value="D10">D </td>
+			<input type="radio" name="q101" value="A10" required="required">A 
+			<input type="radio" name="q101" value="B10" required="required">B 
+			<input type="radio" name="q101" value="C10" required="required">C 
+			<input type="radio" name="q101" value="D10" required="required">D </td>
 		</tr>
 		<tr name="teacher2">
 			<td>
 			<label name="teacher2" class="teacher">teacher 2</label></td>
 			<td>
-			<input type="radio" name="q102" value="A10">A 
-			<input type="radio" name="q102" value="B10">B 
-			<input type="radio" name="q102" value="C10">C 
-			<input type="radio" name="q102" value="D10">D </td>
+			<input type="radio" name="q102" value="A10" required="required">A 
+			<input type="radio" name="q102" value="B10" required="required">B 
+			<input type="radio" name="q102" value="C10" required="required">C 
+			<input type="radio" name="q102" value="D10" required="required">D </td>
 		</tr>
 		<tr name="teacher3">
 			<td>
 			<label name="teacher3" class="teacher">teacher 3</label></td>
 			<td>
-			<input type="radio" name="q103" value="A10">A 
-			<input type="radio" name="q103" value="B10">B 
-			<input type="radio" name="q103" value="C10">C 
-			<input type="radio" name="q103" value="D10">D </td>
+			<input type="radio" name="q103" value="A10" required="required">A 
+			<input type="radio" name="q103" value="B10" required="required">B 
+			<input type="radio" name="q103" value="C10" required="required">C 
+			<input type="radio" name="q103" value="D10" required="required">D </td>
 		</tr>
 		<tr name="teacher4">
 			<td>
 			<label name="teacher4" class="teacher">teacher 4</label></td>
 			<td>
-			<input type="radio" name="q104" value="A10">A 
-			<input type="radio" name="q104" value="B10">B 
-			<input type="radio" name="q104" value="C10">C 
-			<input type="radio" name="q104" value="D10">D </td>
+			<input type="radio" name="q104" value="A10" required="required">A 
+			<input type="radio" name="q104" value="B10" required="required">B 
+			<input type="radio" name="q104" value="C10" required="required">C 
+			<input type="radio" name="q104" value="D10" required="required">D </td>
 		</tr>
 		<tr name="teacher5">
 			<td>
 			<label name="teacher5" class="teacher">teacher 5</label></td>
 			<td>
-			<input type="radio" name="q105" value="A10">A 
-			<input type="radio" name="q105" value="B10">B 
-			<input type="radio" name="q105" value="C10">C 
-			<input type="radio" name="q105" value="D10">D </td>
+			<input type="radio" name="q105" value="A10" required="required">A 
+			<input type="radio" name="q105" value="B10" required="required">B 
+			<input type="radio" name="q105" value="C10" required="required">C 
+			<input type="radio" name="q105" value="D10" required="required">D </td>
 		</tr>
 		<tr name="teacher6">
 		<td>
 			<label name="teacher6" class="teacher">teacher 6</label></td>
 			<td>
-			<input type="radio" name="q106" value="A10">A 
-			<input type="radio" name="q106" value="B10">B 
-			<input type="radio" name="q106" value="C10">C 
-			<input type="radio" name="q106" value="D10">D </td>
+			<input type="radio" name="q106" value="A10" required="required">A 
+			<input type="radio" name="q106" value="B10" required="required">B 
+			<input type="radio" name="q106" value="C10" required="required">C 
+			<input type="radio" name="q106" value="D10" required="required">D </td>
 		</tr>
 	</table>
 </h5>
@@ -702,4 +703,3 @@
 <script type="text/javascript" src="./questions.js"></script>
 </body>
 </html>
-

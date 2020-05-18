@@ -39,15 +39,15 @@ $(document).ready(function() {
 			}
 		}
 		console.log(teachers);
-		fetch("/department_questions", {
-			method: "POST",
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				teachers: teachers
-			})
-		})
-			.catch(err => {console.log(err); e.preventDefault();})
+		// fetch("/department_questions", {
+		// 	method: "POST",
+		// 	headers: {
+		// 		'Content-Type': 'application/json'
+		// 	},
+		// 	body: JSON.stringify({
+		// 		teachers: teachers
+		// 	})
+		// })
+		// 	.catch(err => {console.log(err); e.preventDefault();})
 	})
 });

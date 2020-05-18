@@ -282,7 +282,6 @@ app.get("/register", function(req, res){
 
 app.post("/register", function(req, res) {
 	var data = req.body;
-	console.log('data: ', data);
 	var sql = ``;
 	var dept = data['department'];
 	if(data.year == "FE"){
@@ -308,12 +307,16 @@ app.post("/register", function(req, res) {
 			if(err){
 				console.log(err);
 			} else {
-				console.log('req.session saved')
-				res.redirect('/department_questions');
+				res.redirect('/home');
 			}
 		});
 	});
 });
+
+app.get('/home', isRegistered, function (req, res) {
+	res.sendFile(__dirname + '/frontend/intro.html');
+	console.log('completed: ', req.session.completed);
+})
 
 app.get("/department_questions", isRegistered, function(req, res){
 	res.sendFile(__dirname + "/frontend/questions.html");
@@ -325,7 +328,25 @@ app.post("/getteachers", function(req, res){
 });
 
 app.post("/department_questions", isRegistered, function(req, res){
-	var teachers = req.body.teachers;
+	var response = req.body;
+	var teachers = [];
+	var resp = req.session.data;
+	for(var i = 0; i < 6; i++){
+		if(resp[i]){
+			teachers[i] = Object.assign({}, {info: resp[i]});
+		}
+	}
+	for(var i = 1; i < 7; i ++){
+		var obj = {};
+		if(teachers[i-1]){
+			for(var j = 1; j <11; j ++){
+				if(response[`q${j}${i}`]){
+					obj[`q${j}`] = response[`q${j}${i}`];
+				}
+			}
+		teachers[i-1] = Object.assign(teachers[i-1],{reviews: obj});
+		}
+	}
 	department = req.session.user.department;
 	for(var t = 0; t < teachers.length; t++){
 		var teacher = teachers[t];
@@ -352,11 +373,18 @@ app.post("/department_questions", isRegistered, function(req, res){
 				if(err){
 					console.log(err);
 				} else {
-					console.log("teachers reviews added")
+					console.log("teachers reviews added");
+
 				}
 			});
 		}
 	}
+	if(req.session.completed){
+		req.session.completed = [...req.session.completed, 'faculty']
+	} else {
+		req.session.completed = ['faculty']
+	}
+	res.redirect('/home');
 });
 
 // app.get("/test", function(req, res){
@@ -448,7 +476,12 @@ app.post("/college_questions", function(req, res){
 			console.log("college review added");
 		}
 	});
-	res.redirect("/lab_questions")
+	if(req.session.completed){
+		req.session.completed = [...req.session.completed, 'college']
+	} else {
+		req.session.completed = ['college']
+	}
+	res.redirect("/home")
 });
 
 app.get("/lab_questions", isRegistered, function(req, res){
@@ -470,7 +503,12 @@ app.post("/lab_questions", isRegistered, function(req, res){
 			console.log("lab review added");
 		}
 	})
-	res.redirect("/thankyou");
+	if(req.session.completed){
+		req.session.completed = [...req.session.completed, 'lab']
+	} else {
+		req.session.completed = ['lab']
+	}
+	res.redirect("/home");
 });
 
 app.get("/thankyou", function(req, res){
