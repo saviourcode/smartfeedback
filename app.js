@@ -514,7 +514,7 @@ app.post("/lab_questions", isRegistered, function(req, res){
 	res.redirect("/home");
 });
 
-app.get("/thankyou", function(req, res){
+app.get("/thankyou", isCompleted, function(req, res){
 	res.sendFile(__dirname + "/frontend/thankyou.html");
 });
 
