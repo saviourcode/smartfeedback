@@ -276,7 +276,9 @@ app.get("/DMCE", function(req, res){
 
 //------------------------------------------------------------
 
-app.get("/register", function(req, res){		
+app.get("/register", function(req, res){	
+	req.session.completed = [];
+	console.log('session from registter route: ', req.session);	
 	res.sendFile(__dirname + "/frontend/studentregister.html");
 });
 
@@ -314,6 +316,7 @@ app.post("/register", function(req, res) {
 });
 
 app.get('/home', isRegistered, function (req, res) {
+	console.log('session from home route: ', req.session);	
 	res.sendFile(__dirname + '/frontend/intro.html');
 	console.log('completed: ', req.session.completed);
 })
@@ -424,9 +427,9 @@ app.post("/department_questions", isRegistered, function(req, res){
 // });
 
 // app.get("/test", function(req, res){
-// 	for(var i = 4; i < 6; i++){
+// 	for(var i = 8; i < 10; i++){
 // 		for(var j = 0; j < 4; j++){
-// 			var sql = `ALTER TABLE college_feedback ADD`;
+// 			var sql = `ALTER TABLE computer ADD`;
 // 			switch(j){
 // 				case 0:
 // 					sql = sql.concat(` A${i+1} INT(3) NOT NULL`);
@@ -511,9 +514,18 @@ app.post("/lab_questions", isRegistered, function(req, res){
 	res.redirect("/home");
 });
 
-app.get("/thankyou", function(req, res){
-	res.send("thankyou");
+app.get("/thankyou", isCompleted, function(req, res){
+
+	res.send("<h1>thankyou</h1>");
 });
+
+function isCompleted (req, res, next) {
+	if(req.session.completed.length >= 3){
+		next();
+	} else {
+		res.redirect('/register');
+	}
+}
 
 function isLoggedIn (req, res, next){
 	var sql = "SELECT department,password FROM `privilege login`";
@@ -548,10 +560,6 @@ function isLoggedIn (req, res, next){
 		});
 }
 
-app.get('*', function(req, res){
-	res.send('<h1>404: page not found</h1>')
-})
-
 function isRegistered(req, res, next){
 	setTimeout(() => {
 		if(req.session.user){
@@ -563,6 +571,10 @@ function isRegistered(req, res, next){
 		}
 	}, 500)
 }
+
+app.get('*', function(req, res){
+	res.send('<h1>404: page not found</h1>')
+})
 
 app.listen(process.env.PORT || 3030, process.env.IP, function(){
 	console.log("server running...", process.env.PORT, process.env.IP);
