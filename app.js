@@ -255,12 +255,30 @@ app.post("/cleardb", function(req, res){
 
 app.get("/DMCE", function(req, res){
 	conn.query(`SELECT * from college_feedback WHERE name='everyone'`, function(err, result){
-		let obj = {};
-		for(var i = 0; i < 6; i++){
-			for(var j = 0; j < 4; j++){
-				sw
-			}
-		}
+		// let obj = {};
+		// let q = [];
+		// for(var i = 0; i < 6; i++){
+		// 	for(var j = 0; j < 4; j++){
+		// 		switch(j){
+		// 			case 0:
+		// 				q[i] = q[i] + result[0][`A${i+1}`]
+		// 				break;
+		// 			case 1:
+		// 				b = b + result[0][`B${i+1}`]
+		// 				break;
+		// 			case 2:
+		// 				c = c + result[0][`C${i+1}`]
+		// 				break;
+		// 			case 3:
+		// 				d = d + result[0][`D${i+1}`]
+		// 				break;
+		// 		}
+		// 	}
+		// }
+		// console.log('a: ', a)
+		// console.log('b: ', b)
+		// console.log('c: ', c)
+		// console.log('d: ', d)
 		if(err){
 			res.send(err.message);
 			console.log(err);
