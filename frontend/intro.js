@@ -14,6 +14,9 @@ $(document).ready(function() {
 			for(var i = 0; i < response.completed.length; i++){
 				$(`#${response.completed[i]}`).css('background', 'green')
 				$(`#${response.completed[i]} img`).css('display', 'flex')
+				$(`#${response.completed[i]}`).click(function(e){
+					e.preventDefault();
+				})
 			}
 		}
 	})
