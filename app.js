@@ -253,7 +253,7 @@ app.post("/cleardb", function(req, res){
 	})	
 })
 
-app.get("/DMCE", function(req, res){
+app.get("/dmce", isLoggedIn, function(req, res){
 	conn.query(`SELECT * from college_feedback WHERE name='everyone'`, function(err, result){
 		// let obj = {};
 		// let q = [];
