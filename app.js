@@ -548,6 +548,10 @@ function isLoggedIn (req, res, next){
 		});
 }
 
+app.get('*', function(req, res){
+	res.send('<h1>404: page not found</h1>')
+})
+
 function isRegistered(req, res, next){
 	setTimeout(() => {
 		if(req.session.user){
