@@ -253,6 +253,28 @@ app.post("/cleardb", function(req, res){
 	})	
 })
 
+app.post('/clearlab', isLoggedIn, function(req, res){
+	jwt.verify(req.session.token, process.env.token_key, function(err, result){
+		if(err){
+			console.log(err);
+		} else {
+			const sql = `DELETE from lab_feedback where department='${result.department}'`
+			conn.query(sql, function(errr, response){
+				if(!errr){
+					console.log('deleted ', result.department, ' row');
+					conn.query(`INSERT into lab_feedback(department) VALUES ('${result.department}')`, function(error, done){
+						if(!error){
+							console.log('cleared lab statistics from ', result.department)
+						}
+					})
+				} else {
+					console.log('err: ', err);
+				}
+			})
+		}
+	})
+})
+
 app.get("/dmce", isLoggedIn, function(req, res){
 	conn.query(`SELECT * from college_feedback WHERE name='everyone'`, function(err, result){
 		// let obj = {};

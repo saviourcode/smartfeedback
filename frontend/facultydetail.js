@@ -66,4 +66,9 @@ $(document).ready(function(){
 		})
 		$("tr").remove()
 	});
+	$(".clear-lab").click(function(){
+		fetch("/clearlab", {
+			method: "POST",
+		})
+	});
 })
