@@ -80,7 +80,11 @@ app.post("/plogin", function(req, res){
 			if(req.body.department == "DMCE"){
 				res.redirect("/DMCE");
 			} else {
-				res.redirect(`/addteacher`);
+				if(req.body.department == 'dmce office'){
+					res.redirect('/office')
+				} else {
+					res.redirect(`/addteacher`);
+				}
 			}
 		} else {
 			//failure
@@ -310,6 +314,40 @@ app.get("/dmce", isLoggedIn, function(req, res){
 	})
 })
 
+//------------------------------------------------------------
+
+//                     OFFICE ROUTES
+
+//------------------------------------------------------------
+
+app.get('/office', isOffice, function(req, res) {
+	res.sendFile(__dirname + "/frontend/office_home.html")
+})
+
+app.post('/office', function(req, res) {
+	req.session.officeDepartment = req.body.department
+	req.session.save()
+	res.redirect('/department_data')
+})
+
+app.get('/department_data', function(req, res) {
+	if(req.session.officeDepartment){
+		res.sendFile(__dirname + '/frontend/department_data.html')
+	} else {
+		res.redirect('/office')
+	}
+})
+
+app.post('/department_data', function(req, res) {
+	var sql = `SELECT * FROM ${req.session.officeDepartment}`
+	conn.query(sql, function(err, result){
+		if(err){
+			res.send(err.message)
+		} else {
+			res.send(result)
+		}
+	})
+})
 //------------------------------------------------------------
 
 //                     STUDENTS ROUTES
@@ -570,33 +608,33 @@ function isLoggedIn (req, res, next){
 	var sql = "SELECT department,password FROM `privilege login`";
 	var token = req.session.token;
 	var user = {};
-		jwt.verify(token, process.env.token_key, function(err, decoded){
-			if(err){
-				console.log(err);
-				// res.redirect("/plogin");
+	jwt.verify(token, process.env.token_key, function(err, decoded){
+		if(err){
+			console.log(err);
+			// res.redirect("/plogin");
+		}
+		user = decoded;
+	});
+	conn.query(sql, function(err, row){
+		var loggedIn = false;
+		if(err){
+			console.log(err);
+		}
+		if(user !== undefined){
+			for(var i = 0; i < row.length; i++){
+				if(user.department == row[i].department){
+					if(user.password == row[i].password){
+						loggedIn = true;
+					}
+				} 
 			}
-			user = decoded;
-		});
-		conn.query(sql, function(err, row){
-			var loggedIn = false;
-			if(err){
-				console.log(err);
-			}
-			if(user !== undefined){
-				for(var i = 0; i < row.length; i++){
-					if(user.department == row[i].department){
-						if(user.password == row[i].password){
-							loggedIn = true;
-						}
-					} 
-				}
-			}
-			if(loggedIn){
-				next();
-			} else {
-				res.redirect("/plogin");
-			}
-		});
+		}
+		if(loggedIn){
+			next();
+		} else {
+			res.redirect("/plogin");
+		}
+	});
 }
 
 function isRegistered(req, res, next){
@@ -609,6 +647,35 @@ function isRegistered(req, res, next){
 			res.redirect("/register");
 		}
 	}, 500)
+}
+
+function isOffice(req, res, next){
+	var sql = "SELECT department,password FROM `privilege login`";
+	var token = req.session.token;
+	var user = {};
+	jwt.verify(token, process.env.token_key, function(err, decoded){
+		if(err){
+			console.log(err);
+			// res.redirect("/plogin");
+		}
+		user = decoded;
+	});
+	conn.query(sql, function(err, row){
+		var loggedIn = false;
+		if(err){
+			console.log(err);
+		}
+		if(user !== undefined){
+			if(user.department == 'dmce office' && user.password == 'office@123'){
+				loggedIn = true;
+			}
+		}
+		if(loggedIn){
+			next();
+		} else {
+			res.redirect("/plogin");
+		}
+	});
 }
 
 app.get('*', function(req, res){
