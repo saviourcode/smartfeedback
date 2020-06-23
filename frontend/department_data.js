@@ -44,5 +44,12 @@ fetch('/department_data', {
 				${str1}
 			</tr>
 		`)
+		$('.excel').unbind().click(function() {
+			$('#exportTable').table2excel({
+				name: 'department_data',
+				filename: 'department_data',
+				fileext: '.xls'
+			})
+		})
 	})
 })
