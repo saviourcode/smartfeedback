@@ -27,7 +27,7 @@
 </head>
 <body>
 	<h1>department data</h1>
-	<button class="download-button excel">download excel file</button>
+	<button onclick="exportToExcel('exportTable')" class="download-button">download excel file</button>
 	<button class="download-button">download pdf file</button>
 	<table id='exportTable'>
 		<tr>
@@ -91,6 +91,39 @@
 			<td><b>D</b></td>
 		</tr>
 	</table>
-<script type="text/javascript" src="./department_data.js"></script>
+	<script type="text/javascript">
+		function exportToExcel(tableID, filename = ''){
+		    var downloadurl;
+		    var dataFileType = 'application/vnd.ms-excel';
+		    var tableSelect = document.getElementById(tableID);
+		    var tableHTMLData = tableSelect.outerHTML.replace(/ /g, '%20');
+		    
+		    // Specify file name
+		    filename = filename?filename+'.xls':'export_excel_data.xls';
+		    
+		    // Create download link element
+		    downloadurl = document.createElement("a");
+		    
+		    document.body.appendChild(downloadurl);
+		    
+		    if(navigator.msSaveOrOpenBlob){
+		        var blob = new Blob(['\ufeff', tableHTMLData], {
+		            type: dataFileType
+		        });
+		        navigator.msSaveOrOpenBlob( blob, filename);
+		    }else{
+		        // Create a link to the file
+		        downloadurl.href = 'data:' + dataFileType + ', ' + tableHTMLData;
+		    
+		        // Setting the file name
+		        downloadurl.download = filename;
+		        
+		        //triggering the function
+		        downloadurl.click();
+		    }
+		}
+		 
+	</script>
+	<script type="text/javascript" src="./department_data.js"></script>
 </body>
 </html>
