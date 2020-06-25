@@ -39,6 +39,7 @@ $(document).ready(function(){
 				subject: input.eq(1).val(),
 				year: input.eq(2).val(),
 				division: input.eq(3).val(),
+				semester: input.eq(4).val(),
 				button: 'add'
 			})	
 		}

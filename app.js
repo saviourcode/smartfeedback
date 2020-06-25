@@ -119,9 +119,9 @@ app.post("/addteacher", isLoggedIn, function(req, res){
 	});
 	var sql = ``;
 	if(department === "humanities"){
-		sql = `INSERT ${department}(name,subject,branch,division) VALUES ('${data.name}','${data.subject}','${data.branch}','${data.division}')`
+		sql = `INSERT ${department}(name,subject,branch,division,semester) VALUES ('${data.name}','${data.subject}','${data.branch}','${data.division}', '${data.semester}')`
 	} else {
-		sql = `INSERT ${department}(name,subject,year,division) VALUES ('${data.name}','${data.subject}','${data.year}','${data.division}')`;		
+		sql = `INSERT ${department}(name,subject,year,division,semester) VALUES ('${data.name}','${data.subject}','${data.year}','${data.division}', '${data.semester}') `;		
 	}
 	conn.query(sql, function(err ,result){
 		if(err){
@@ -148,9 +148,9 @@ app.post("/showteachers", function(req, res){
 	});
 	var sql = ``;
 	if(department == "humanities"){
-		sql = `SELECT id,name,subject,branch,division FROM ${department}`;
+		sql = `SELECT id,name,subject,branch,division,semester FROM ${department}`;
 	} else {
-		sql = `SELECT id,name,subject,year,division FROM ${department}`;
+		sql = `SELECT id,name,subject,year,division,semester FROM ${department}`;
 	}
 	conn.query(sql, function(err, result){
 		res.send(result);
@@ -321,7 +321,7 @@ app.get("/dmce", isLoggedIn, function(req, res){
 //------------------------------------------------------------
 
 app.get('/office', isOffice, function(req, res) {
-	res.sendFile(__dirname + "/frontend/office_home.html")
+	res.sendFile(__dirname + "/frontend/retrieve1.html")
 })
 
 app.post('/office', function(req, res) {

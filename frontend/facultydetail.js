@@ -12,6 +12,7 @@ $(document).ready(function(){
 							<td>${response[i].id}</td>
 							<td>${response[i].name}</td>
 							<td>${response[i].subject}</td>
+							<td>${response[i].semester}</td>
 							<td>${response[i].year}</td>
 							<td>${response[i].division}</td>
 							<td><form action="/statistics" method="POST"><button id='${response[i].id}' name='tid' value='${response[i].id}' class='show'>get statistics</button></form></td>
@@ -27,6 +28,7 @@ $(document).ready(function(){
 							<td>${response[i].id}</td>
 							<td>${response[i].name}</td>
 							<td>${response[i].subject}</td>
+							<td>${response[i].semester}</td>
 							<td>${response[i].branch}</td>
 							<td>${response[i].division}</td>
 							<td><form action="/statistics" method="POST"><button id='${response[i].id}' name='tid' value='${response[i].id}' class='show'>get statistics</button></form></td>
