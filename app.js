@@ -339,7 +339,7 @@ app.get('/department_data', function(req, res) {
 })
 
 app.post('/department_data', function(req, res) {
-	var sql = `SELECT * FROM ${req.session.officeDepartment}`
+	var sql = `SELECT * FROM ${req.session.officeDepartment} ORDER BY semester, division ASC`
 	conn.query(sql, function(err, result){
 		if(err){
 			res.send(err.message)

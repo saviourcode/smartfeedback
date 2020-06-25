@@ -4,7 +4,9 @@ fetch('/department_data', {
 .then(res => res.json())
 .then(response => {
 	console.log(response)
+	var sem = 0;
 	response.forEach(faculty => {
+		sem = sem + faculty.semester;
 		var str1 = ''
 		var result = 0;
 		for(var i = 0; i < 10; i++){
@@ -34,22 +36,30 @@ fetch('/department_data', {
 			}
 		}
 		result = result/10
+		console.log('id: ', faculty.id, 'result: ', result)
 		$('table').append(`
 			<tr>
 				<td>${faculty.id}</td>
 				<td>${faculty.name}</td>
 				<td>${faculty.subject}</td>
+				<td>${faculty.semester}</td>
 				<td>${faculty.year}</td>
 				<td>${faculty.division}</td>
 				${str1}
+				<td>${result}</td>
 			</tr>
 		`)
-		$('.excel').unbind().click(function() {
-			$('#exportTable').table2excel({
-				name: 'department_data',
-				filename: 'department_data',
-				fileext: '.xls'
-			})
+	})
+	$('.excel').unbind().click(function() {
+		$('#exportTable').table2excel({
+			name: 'department_data',
+			filename: 'department_data',
+			fileext: '.xls'
 		})
 	})
+	if(sem % 2 == 0){
+		$('tr').eq(1).append('<th colspan="47" style="font-size: 30px;">Even Semester</th>')
+	} else {
+		$('tr').eq(1).val('<th colspan="47" style="font-size: 30px;">Odd Semester</th>')
+	}
 })
