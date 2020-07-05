@@ -26,7 +26,8 @@
   	</style>
 </head>
 <body>
-	<h1>department data</h1>
+	<h1 style="text-align: center;font-size: 35px;" class="heading"></h1>
+	<h1 style="text-align: center;font-size: 35px;">Department Data</h1>
 	<button onclick="exportToExcel('exportTable')" class="download-button">download excel file</button>
 	<table id='exportTable'>
 		<tr>
@@ -39,11 +40,11 @@
 		</tr>
 		<tr>
 			<th rowspan="2">id</th>
-			<th rowspan="2">name</th>
-			<th rowspan="2">subject</th>
-			<th rowspan="2">semester</th>
-			<th rowspan="2">year</th>
-			<th rowspan="2">division</th>
+			<th rowspan="2">Name</th>
+			<th rowspan="2">Subject</th>
+			<th rowspan="2">Semester</th>
+			<th rowspan="2">Year</th>
+			<th rowspan="2">Division</th>
 			<th colspan="4">Q1</th>
 			<th colspan="4">Q2</th>
 			<th colspan="4">Q3</th>
@@ -99,11 +100,60 @@
 			<td><b>D</b></td>
 		</tr>
 	</table>
-	<video
-        src="http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8"
-        height="300" width="400"
-    >
-    </video>
+
+	<h1 style="text-align: center;font-size: 35px;">Department Result</h1>
+	<button onclick="exportToExcel('exportTable2')" class="download-button">download excel file</button>
+
+	<table id='exportTable2'>
+		<tr>
+			<th
+				colspan="26"
+				style='font-size: 30px;'>Datta Meghe College of Engineering (Airoli)</th>
+		</tr>
+		<tr>
+			
+		</tr>
+		<tr>
+			<th rowspan="2">id</th>
+			<th rowspan="2">Name</th>
+			<th rowspan="2">Subject</th>
+			<th rowspan="2">Semester</th>
+			<th rowspan="2">Year</th>
+			<th rowspan="2">Division</th>
+			<th colspan="2">Q1</th>
+			<th colspan="2">Q2</th>
+			<th colspan="2">Q3</th>
+			<th colspan="2">Q4</th>
+			<th colspan="2">Q5</th>
+			<th colspan="2">Q6</th>
+			<th colspan="2">Q7</th>
+			<th colspan="2">Q8</th>
+			<th colspan="2">Q9</th>
+			<th colspan="2">Q10</th>
+		</tr>
+		<tr>
+			<td><b>result</b></td>
+			<td><b>A/U</b></td>
+			<td><b>result</b></td>
+			<td><b>A/U</b></td>
+			<td><b>result</b></td>
+			<td><b>A/U</b></td>
+			<td><b>result</b></td>
+			<td><b>A/U</b></td>
+			<td><b>result</b></td>
+			<td><b>A/U</b></td>
+			<td><b>result</b></td>
+			<td><b>A/U</b></td>
+			<td><b>result</b></td>
+			<td><b>A/U</b></td>
+			<td><b>result</b></td>
+			<td><b>A/U</b></td>
+			<td><b>result</b></td>
+			<td><b>A/U</b></td>
+			<td><b>result</b></td>
+			<td><b>A/U</b></td>
+		</tr>
+	</table>
 	<script type="text/javascript">
 		function exportToExcel(tableID, filename = ''){
 		    var downloadurl;

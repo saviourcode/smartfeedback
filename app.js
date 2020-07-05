@@ -344,7 +344,7 @@ app.post('/department_data', function(req, res) {
 		if(err){
 			res.send(err.message)
 		} else {
-			res.send(result)
+			res.send({result: result, department: req.session.officeDepartment})
 		}
 	})
 })
