@@ -3,14 +3,18 @@ fetch('/department_data', {
 })
 .then(res => res.json())
 .then(response => {
+	const capitalize = (s) => {
+	  return s.charAt(0).toUpperCase() + s.slice(1)
+	}
 	var sem = 0;
-	$('.heading').text(`Department: ${response.department}`)
+	$('.heading').text(`Department: ${capitalize(response.department)}`)
 	response.result.forEach(faculty => {
 		sem = sem + faculty.semester;
 		var str1 = ''
 		var result = 0;
 		var str2 = ''
 		var verdict;
+		var totalResponse = 0;
 		for(var i = 0; i < 10; i++){
 			var avg = 0;
 			var overall = 0;
@@ -46,8 +50,9 @@ fetch('/department_data', {
 			if(verdict*100 > 50){
 				str2 = str2.concat(`<td>A</td>`)
 			} else {
-				str2 = str2.concat(`<td>U</td>`)
+				str2 = str2.concat(`<td>NA</td>`)
 			}
+			totalResponse = totalResponse + overall;
 		}
 		result = Math.ceil(result*10)
 		$('#exportTable').append(`
@@ -58,8 +63,8 @@ fetch('/department_data', {
 				<td>${faculty.semester}</td>
 				<td>${faculty.year}</td>
 				<td>${faculty.division}</td>
+				<td>${Math.round(totalResponse/10)}</td>
 				${str1}
-				<td>${result}%</td>
 			</tr>
 		`)
 		$('#exportTable2').append(`
@@ -70,6 +75,7 @@ fetch('/department_data', {
 				<td>${faculty.semester}</td>
 				<td>${faculty.year}</td>
 				<td>${faculty.division}</td>
+				<td>${Math.round(totalResponse/10)}</td>
 				${str2}
 			</tr>
 		`)
@@ -83,9 +89,9 @@ fetch('/department_data', {
 	// })
 	if(sem % 2 == 0){
 		$('#exportTable tr').eq(1).append('<th colspan="47" style="font-size: 30px;">Even Semester</th>')
-		$('#exportTable2 tr').eq(1).append('<th colspan="47" style="font-size: 30px;">Even Semester</th>')
+		$('#exportTable2 tr').eq(1).append('<th colspan="27" style="font-size: 30px;">Even Semester</th>')
 	} else {
 		$('#exportTable tr').eq(1).val('<th colspan="47" style="font-size: 30px;">Odd Semester</th>')
-		$('#exportTable2 tr').eq(1).val('<th colspan="47" style="font-size: 30px;">Odd Semester</th>')
+		$('#exportTable2 tr').eq(1).val('<th colspan="27" style="font-size: 30px;">Odd Semester</th>')
 	}
 })
