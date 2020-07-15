@@ -8,6 +8,10 @@
   crossorigin="anonymous"></script>
   	<script src="https://rawgit.com/unconditional/jquery-table2excel/master/src/jquery.table2excel.js"></script>
   	<style type="text/css">
+  		body {
+  			background: linear-gradient(120deg,#3498db,#8e44ad)
+  		}
+
   		table {
   			width: 100%;
   			border-collapse: collapse;  			
@@ -22,6 +26,14 @@
 			font-size: 16px;
 			margin: 10px 0;
 			display: block;
+		}
+
+		tr:nth-child(even) {
+		  background-color: #dddddd;
+		}
+
+		tr:nth-child(odd) {
+		  background-color: #3498db;
 		}
   	</style>
 </head>
