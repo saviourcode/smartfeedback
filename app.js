@@ -503,40 +503,47 @@ app.post("/department_questions", isRegistered, function(req, res){
 // 	// })
 // });
 
-// app.get("/test", function(req, res){
-// 	for(var i = 8; i < 10; i++){
-// 		for(var j = 0; j < 4; j++){
-// 			var sql = `ALTER TABLE computer ADD`;
-// 			switch(j){
-// 				case 0:
-// 					sql = sql.concat(` A${i+1} INT(3) NOT NULL`);
-// 					break;
-// 				case 1:
-// 					sql = sql.concat(` B${i+1} INT(3) NOT NULL`);
-// 					break;
-// 				case 2:
-// 					sql = sql.concat(` C${i+1} INT(3) NOT NULL`);
-// 					break;
-// 				case 3:
-// 					sql = sql.concat(` D${i+1} INT(3) NOT NULL`);
-// 					break;
-// 			}
-// 			console.log(sql);
-// 			conn.query(sql, function(err, result){
-// 				if(err){
-// 					console.log(err);
-// 					res.send(err);
-// 				} else {
-// 					console.log('altered table successfully');
-// 				}
-// 			})
-// 		}
-// 	}
-// })
+app.get("/test", function(req, res){
+	res.send('<form method="post" action="/test"><button>update tables</button></form>')
+})
 
 // app.get('/test', function(req, res){
 // 	conn.query(`ALTER TABLE it ADD C1 INT(3)`)
 // })
+
+app.post('/test', function(req, res) {
+	const departments = ['computer', 'electronics', 'it', 'civil', 'mechanical', 'chemical']
+	departments.forEach((dept) => {
+		for(var i = 0; i < 10; i++){
+			for(var j = 0; j < 4; j++){
+				var sql = `ALTER TABLE ${dept} ADD`;
+				switch(j){
+					case 0:
+						sql = sql.concat(` A${i+1} INT(3) NOT NULL`);
+						break;
+					case 1:
+						sql = sql.concat(` B${i+1} INT(3) NOT NULL`);
+						break;
+					case 2:
+						sql = sql.concat(` C${i+1} INT(3) NOT NULL`);
+						break;
+					case 3:
+						sql = sql.concat(` D${i+1} INT(3) NOT NULL`);
+						break;
+				}
+				conn.query(sql, function(err, result){
+					if(err){
+						console.log(err);
+						res.send(err);
+					} else {
+						console.log('altered table successfully');
+					}
+				})
+			}
+		}
+	})
+	res.send('successfully created computer department table')
+})
 
 app.get("/college_questions", isRegistered, function(req, res){
 	res.sendFile(__dirname + "/frontend/colquestions.html");
