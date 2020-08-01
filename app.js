@@ -354,8 +354,7 @@ app.post('/department_data', function(req, res) {
 
 //------------------------------------------------------------
 
-app.get("/register", function(req, res){	
-	req.session.completed = [];
+app.get("/register", function(req, res){
 	console.log('session from registter route: ', req.session);	
 	res.sendFile(__dirname + "/frontend/studentregister.html");
 });
