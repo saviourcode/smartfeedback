@@ -34,10 +34,10 @@ the base url would be "localhost:3030" 3030 being the port number
     - cd to the directory of the Apache server's configuration folder   
     `cd /etc/apache2/sites-available/`
     - move the "smartfeedback.conf" file to the configuration folder   
-    (path/to/the/repo is the actual path where the repo is cloned)      
+    _(path/to/the/repo is the actual path where the repo is cloned)_        
     `mv path/to/the/repo/smartfeedback/smartfeedback.conf ./`
-4. Changes to be made in the smartfeedback.conf file
-    Note: Use `sudo [vim|nano] smartfeedback.conf` due to permission issues
+4. Changes to be made in the smartfeedback.conf file   
+    _Note: Use `sudo [vim|nano] smartfeedback.conf` due to permission issues_      
     - at line 4, change the subdomain in ServerAlias to the actual subdomain allocated   
     `ServerAlias subdomain.dmce.ac.in`
     - at line 6, change the path of the DocumentRoot to the actual path where the repo is cloned   
