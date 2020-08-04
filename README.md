@@ -52,7 +52,8 @@ college feedback system
     sudo a2ensite smartfeedback.conf
     sudo a2dissite 000-default.conf
     ```
-6. 
+6. Reload the Apache Server and check for errors   
+    `systemctl reload apache2`
     
 # Location
 
