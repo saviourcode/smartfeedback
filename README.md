@@ -1,7 +1,7 @@
 # smartfeedback
 college feedback system
 
-# Setting Up the Node.js Application
+# Setting Up the Node.js App
 1. Install the nodejs package
     ```
     sudo apt-get update
@@ -54,6 +54,21 @@ college feedback system
     ```
 6. Reload the Apache Server and check for errors   
     `systemctl reload apache2`
+    
+# Starting and Stopping the Node.js App
+
+## Starting the Web App as a daemon process (Background Process)
+Change directory to the cloned repository
+    _(path/to/the/repo is the actual path where the repo is cloned)_
+    ```
+    cd path/to/the/repo/smartfeedback
+    forever start app.js
+    ```
+## Stopping the Web App
+1. List the running forever processes using   
+    `forever list`
+2. Stop the running process by it's UUID
+    `forever stop 0`
     
 # Location
 
