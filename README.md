@@ -17,9 +17,9 @@ For admin portal go to the location "/plogin"
 
 the base url would be "localhost:3030" 3030 being the port number
 
-# Setting Up the Apache Server on Unix(Debian)
+# Setting Up the Apache Server to host Node.js App on Unix(Debian)
 
-1. Install the Apacher Server via   
+1. Install the Apache Server via   
     ```
     sudo apt-get update   
     sudo apt-get install apache2
@@ -41,8 +41,9 @@ the base url would be "localhost:3030" 3030 being the port number
     `ServerAlias subdomain.dmce.ac.in`
     - at line 6, change the path of the DocumentRoot to the actual path where the repo is cloned   
     `DocumentRoot /home/ubuntu/smartfeedback`
-5. Enable the new site configuration and disable the default one
+5. After saving the conf file, Enable the new site configuration and disable the default one
     ```
     sudo a2ensite smartfeedback.conf
     sudo a2dissite 000-default.conf
     ```
+    
