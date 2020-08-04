@@ -20,10 +20,10 @@ the base url would be "localhost:3030" 3030 being the port number
 # Setting Up the Apache Server on Unix(Debian)
 
 1. Install the Apacher Server via   
-```
-sudo apt-get update   
-sudo apt-get install apache2
-```
+    ```
+    sudo apt-get update   
+    sudo apt-get install apache2
+    ```
 2. Now, Proxy all request incoming on Port 80 through the URL of a node.js Application to the running local node.js process.   
     - Install/Enable mod_proxy & mod_proxy_http modules  
       ```
@@ -41,3 +41,8 @@ sudo apt-get install apache2
     `ServerAlias subdomain.dmce.ac.in`
     - at line 6, change the path of the DocumentRoot to the actual path where the repo is cloned   
     `DocumentRoot /home/ubuntu/smartfeedback`
+5. Enable the new site configuration and disable the default one
+    ```
+    sudo a2ensite smartfeedback.conf
+    sudo a2dissite 000-default.conf
+    ```
