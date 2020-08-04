@@ -34,6 +34,7 @@ sudo apt-get install apache2
     - cd to the directory of the Apache server's configuration folder   
     `cd /etc/apache2/sites-available/`
     - move the "smartfeedback.conf" file to the configuration folder   
+    (path/to/the/repo is the actual path where the repo is cloned)      
     `mv path/to/the/repo/smartfeedback/smartfeedback.conf ./`
 4. Changes to be made in the smartfeedback.conf file
     - at line 4, change the subdomain in ServerAlias to the actual subdomain allocated   
