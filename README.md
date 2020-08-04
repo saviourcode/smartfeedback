@@ -31,7 +31,9 @@ sudo apt-get install apache2
       a2enmod proxy_http
       ```
 3. Configure the VirtualHost of Apache Server
-    - cd to the directory of the Apache Server's Configuration folder   
+    - cd to the directory of the Apache server's configuration folder   
     `cd /etc/apache2/sites-available/`
-    - Create a new Configuration file in that directory as a root user   
-    `sudo vim smartfeedback.conf`
+    - move the "smartfeedback.conf" file to the configuration folder   
+    `mv path/to/the/repo/smartfeedback/smartfeedback.conf ./`
+4. Changes to be made in the smartfeedback.conf file
+    - At line 4
