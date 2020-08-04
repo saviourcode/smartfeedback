@@ -58,10 +58,10 @@ college feedback system
 # Starting and Stopping the Node.js App
 
 ## Starting the Web App as a daemon process (Background Process)
-Change directory to the cloned repository    
+1. Change directory to the cloned repository    
     _(path/to/the/repo is the actual path where the repo is cloned)_    
     ```
-    cd path/to/the/repo/smartfeedback
+    cd path/to/the/repo/smartfeedback    
     forever start app.js
     ```
 ## Stopping the Web App
