@@ -2,17 +2,21 @@
 college feedback system
 
 # Setting Up the Node.js Application
-
-1. Clone the Repository to the home directory  
+1. Install the nodejs package
+    ```
+    sudo apt-get update
+    sudo apt-get install nodejs
+    ```
+2. Clone the Repository to the home directory  
     `git clone https://github.com/DhruvGodambe/smartfeedback.git`
-2. Download/Install the dependencies 
+3. Download/Install the dependencies 
     ```
     cd smartfeedback
     npm install
     ```
     _Note: If the npm complains about the audit run,_   
     `npm audit fix`
-3. Download/Install nodemon & forever
+4. Download/Install nodemon & forever
     ```
     npm install -g nodemon
     npm install -g forever
