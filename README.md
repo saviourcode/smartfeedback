@@ -36,4 +36,7 @@ sudo apt-get install apache2
     - move the "smartfeedback.conf" file to the configuration folder   
     `mv path/to/the/repo/smartfeedback/smartfeedback.conf ./`
 4. Changes to be made in the smartfeedback.conf file
-    - At line 4
+    - at line 4, change the subdomain in ServerAlias to the actual subdomain allocated   
+    `ServerAlias subdomain.dmce.ac.in`
+    - at line 6, change the path of the DocumentRoot to the actual path where the repo is cloned   
+    `DocumentRoot /home/ubuntu/smartfeedback`
