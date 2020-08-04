@@ -1,14 +1,20 @@
 # smartfeedback
 college feedback system
 
-# Setup
+# Setting Up the Node.js Application
 
-First to download the dependencies enter the directory and type **npm install** in your terminal
-
-Make sure to download nodemon by typing **npm install -g nodemon**
-
-Run the server with the command **npm start**
-
+1. Download/Install the dependencies 
+    ```
+    cd smartfeedback
+    npm install
+    ```
+    _Note: If the npm complains about the audit run,_   
+    `npm audit fix`
+2. Download/Install nodemon & forever
+    ```
+    npm install -g nodemon
+    npm install -g forever
+    ```
 # Location
 
 Student portal would be the home page "/"
