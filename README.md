@@ -3,26 +3,21 @@ college feedback system
 
 # Setting Up the Node.js Application
 
-1. Download/Install the dependencies 
+1. Clone the Repository to the home directory  
+    `git clone https://github.com/DhruvGodambe/smartfeedback.git`
+2. Download/Install the dependencies 
     ```
     cd smartfeedback
     npm install
     ```
     _Note: If the npm complains about the audit run,_   
     `npm audit fix`
-2. Download/Install nodemon & forever
+3. Download/Install nodemon & forever
     ```
     npm install -g nodemon
     npm install -g forever
     ```
-# Location
-
-Student portal would be the home page "/"
-
-For admin portal go to the location "/plogin"
-
-the base url would be "localhost:3030" 3030 being the port number
-
+    
 # Setting Up the Apache Server to host Node.js App on Unix(Debian)
 
 1. Install the Apache Server via   
@@ -53,4 +48,12 @@ the base url would be "localhost:3030" 3030 being the port number
     sudo a2ensite smartfeedback.conf
     sudo a2dissite 000-default.conf
     ```
+6. 
     
+# Location
+
+Student portal would be the home page "/"
+
+For admin portal go to the location "/plogin"
+
+the base url would be "localhost:3030" 3030 being the port number
